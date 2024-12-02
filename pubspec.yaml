@@ -199,9 +199,9 @@ flutter:
   # see https://flutter.dev/to/font-from-package
 
 scripts:
-  gen: flutter pub run build_runner build --delete-conflicting-outputs
-  wgen: dart pub run build_runner watch --delete-conflicting-outputs
-  build: dart pub run build_runner build --delete-conflicting-outputs
-  watch: dart pub run build_runner watch
-  watch_del: dart pub run build_runner watch --delete-conflicting-outputs
+  gen: dart run build_runner build --delete-conflicting-outputs
+  wgen: dart run build_runner watch --delete-conflicting-outputs
+  build: dart run build_runner build --delete-conflicting-outputs
+  watch: dart run build_runner watch
+  watch_del: dart run build_runner watch --delete-conflicting-outputs
   go_features:
