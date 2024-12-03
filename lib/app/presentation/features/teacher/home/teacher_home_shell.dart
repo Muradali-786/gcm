@@ -145,7 +145,7 @@ class _TeacherHomeShellPageState extends State<TeacherHomeShellPage> {
       case 4:
         return 'Database';
       default:
-        return ''; // For undefined cases
+        return 'Dashboard'; // ################ here should return Dashboard
     }
   }
 }
