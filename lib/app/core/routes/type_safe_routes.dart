@@ -1,8 +1,8 @@
-
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import '../../presentation/features/views.dart';
 
+part 'type_safe_routes.g.dart';
 
 final GlobalKey<NavigatorState> shellNavigatorKey1 =
 GlobalKey<NavigatorState>();
@@ -16,22 +16,58 @@ final GlobalKey<NavigatorState> shellNavigatorKey5 =
 GlobalKey<NavigatorState>();
 final GlobalKey<NavigatorState> rootNavigatorKey = GlobalKey<NavigatorState>();
 
-// @TypedGoRoute<SplashRoute>(path: '/')
-// class SplashRoute extends GoRouteData {
-//   const SplashRoute();
-//
-//   @override
-//   Widget build(BuildContext context, GoRouterState state) => const SplashPage();
-// }
-//
-// @TypedGoRoute<LoginRoute>(path: '/login')
-// class LoginRoute extends GoRouteData {
-//   const LoginRoute();
-//
-//   @override
-//   Widget build(BuildContext context, GoRouterState state) => const LoginPage();
-// }
-//
-//
-//
+@TypedGoRoute<SplashRoute>(path: '/')
+class SplashRoute extends GoRouteData {
+  const SplashRoute();
 
+  @override
+  Widget build(BuildContext context, GoRouterState state) => const SplashPage();
+}
+
+@TypedGoRoute<LoginRoute>(path: '/login')
+class LoginRoute extends GoRouteData {
+  const LoginRoute();
+
+  @override
+  Widget build(BuildContext context, GoRouterState state) => const LoginPage();
+}
+
+@TypedStatefulShellRoute<TeacherHomeShellRoute>(
+  branches: [
+    TypedStatefulShellBranch<DashboardBranchRoute>(routes: [
+      TypedGoRoute<DashboardRoute>(path: '/dashboard'),
+    ]),
+    // TypedStatefulShellBranch<DatabaseBranch>(routes: [
+    //   TypedGoRoute<DatabaseRoute>(path: '/database',routes: [
+    //     TypedGoRoute<AssignedTasksRoute>(path: '/assigned-tasks'),
+    //   ]),
+    // ]),
+  ],
+)
+class TeacherHomeShellRoute extends StatefulShellRouteData {
+  const TeacherHomeShellRoute();
+
+  // static final GlobalKey<NavigatorState> $navigatorKey = shellNavigatorKey;
+
+  @override
+  Widget builder(BuildContext context, GoRouterState state,
+      StatefulNavigationShell navigationShell) {
+    return TeacherHomeShellPage(navigationShell: navigationShell);
+  }
+}
+
+class DashboardBranchRoute extends StatefulShellBranchData {
+  const DashboardBranchRoute();
+
+// static final GlobalKey<NavigatorState> $navigatorKey = shellNavigatorKey;
+}
+
+
+class DashboardRoute extends GoRouteData {
+  const DashboardRoute();
+
+  @override
+  Widget build(BuildContext context, GoRouterState state) {
+    return const DashboardPage();
+  }
+}
