@@ -4,16 +4,7 @@ import '../../presentation/features/views.dart';
 
 part 'type_safe_routes.g.dart';
 
-final GlobalKey<NavigatorState> shellNavigatorKey1 =
-GlobalKey<NavigatorState>();
-final GlobalKey<NavigatorState> shellNavigatorKey2 =
-GlobalKey<NavigatorState>();
-final GlobalKey<NavigatorState> shellNavigatorKey3 =
-GlobalKey<NavigatorState>();
-final GlobalKey<NavigatorState> shellNavigatorKey4 =
-GlobalKey<NavigatorState>();
-final GlobalKey<NavigatorState> shellNavigatorKey5 =
-GlobalKey<NavigatorState>();
+
 final GlobalKey<NavigatorState> rootNavigatorKey = GlobalKey<NavigatorState>();
 
 @TypedGoRoute<SplashRoute>(path: '/')
