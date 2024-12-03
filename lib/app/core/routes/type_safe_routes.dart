@@ -4,7 +4,6 @@ import '../../presentation/features/views.dart';
 
 part 'type_safe_routes.g.dart';
 
-
 final GlobalKey<NavigatorState> rootNavigatorKey = GlobalKey<NavigatorState>();
 
 @TypedGoRoute<SplashRoute>(path: '/')
@@ -25,9 +24,11 @@ class LoginRoute extends GoRouteData {
 
 @TypedStatefulShellRoute<TeacherHomeShellRoute>(
   branches: [
-    TypedStatefulShellBranch<DashboardBranchRoute>(routes: [
-      TypedGoRoute<DashboardRoute>(path: '/dashboard'),
-    ]),
+    TypedStatefulShellBranch<DashboardBranchRoute>(
+      routes: [
+        TypedGoRoute<DashboardRoute>(path: '/dashboard'),
+      ],
+    ),
     // TypedStatefulShellBranch<DatabaseBranch>(routes: [
     //   TypedGoRoute<DatabaseRoute>(path: '/database',routes: [
     //     TypedGoRoute<AssignedTasksRoute>(path: '/assigned-tasks'),
@@ -38,21 +39,18 @@ class LoginRoute extends GoRouteData {
 class TeacherHomeShellRoute extends StatefulShellRouteData {
   const TeacherHomeShellRoute();
 
-  // static final GlobalKey<NavigatorState> $navigatorKey = shellNavigatorKey;
-
   @override
   Widget builder(BuildContext context, GoRouterState state,
       StatefulNavigationShell navigationShell) {
-    return TeacherHomeShellPage(navigationShell: navigationShell);
+    return TeacherHomeShellPage(
+      navigationShell: navigationShell,
+    );
   }
 }
 
 class DashboardBranchRoute extends StatefulShellBranchData {
   const DashboardBranchRoute();
-
-// static final GlobalKey<NavigatorState> $navigatorKey = shellNavigatorKey;
 }
-
 
 class DashboardRoute extends GoRouteData {
   const DashboardRoute();
