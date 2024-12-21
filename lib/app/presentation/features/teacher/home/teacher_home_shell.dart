@@ -22,13 +22,6 @@ class _TeacherHomeShellPageState extends State<TeacherHomeShellPage> {
   Widget build(BuildContext context) {
     log('currentIndex: ${widget.navigationShell.currentIndex}');
     return Scaffold(
-      // appBar:  DefaultAppBar(
-      //   title: PrimaryText(
-      //     text: getPageTitle(widget.navigationShell.currentIndex),
-      //   ),
-      //   subtitle: SecondaryText(text: 'See today’s performance'),
-      //   actions: [NotificationWithBadge()],
-      // ),
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.all(8.0),
         child: SizedBox(
