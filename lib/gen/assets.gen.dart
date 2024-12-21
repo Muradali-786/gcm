@@ -113,105 +113,24 @@ class $AssetsFontsGen {
 class $AssetsIconsGen {
   const $AssetsIconsGen();
 
-  /// File path: assets/icons/Close.svg
-  String get close => 'assets/icons/Close.svg';
-
-  /// File path: assets/icons/Notification.svg
-  String get notification => 'assets/icons/Notification.svg';
-
-  /// File path: assets/icons/add.svg
-  String get add => 'assets/icons/add.svg';
-
-  /// File path: assets/icons/admin_note.svg
-  String get adminNote => 'assets/icons/admin_note.svg';
-
-  /// File path: assets/icons/approvals.svg
-  String get approvals => 'assets/icons/approvals.svg';
-
-  /// File path: assets/icons/attach_media.svg
-  String get attachMedia => 'assets/icons/attach_media.svg';
-
-  /// File path: assets/icons/back_arrow.svg
-  String get backArrow => 'assets/icons/back_arrow.svg';
-
-  /// File path: assets/icons/cash_control.svg
-  String get cashControl => 'assets/icons/cash_control.svg';
-
-  /// File path: assets/icons/check_file.svg
-  String get checkFile => 'assets/icons/check_file.svg';
-
-  /// File path: assets/icons/collection.svg
-  String get collection => 'assets/icons/collection.svg';
-
-  /// File path: assets/icons/collection_n_routes.svg
-  String get collectionNRoutes => 'assets/icons/collection_n_routes.svg';
-
-  /// File path: assets/icons/create.svg
-  String get create => 'assets/icons/create.svg';
+  /// File path: assets/icons/academics.svg
+  String get academics => 'assets/icons/academics.svg';
 
   /// File path: assets/icons/dashboard.svg
   String get dashboard => 'assets/icons/dashboard.svg';
 
-  /// File path: assets/icons/database.svg
-  String get database => 'assets/icons/database.svg';
+  /// File path: assets/icons/notfication.svg
+  String get notfication => 'assets/icons/notfication.svg';
 
-  /// File path: assets/icons/file.svg
-  String get file => 'assets/icons/file.svg';
+  /// File path: assets/icons/reports.svg
+  String get reports => 'assets/icons/reports.svg';
 
-  /// File path: assets/icons/group.svg
-  String get group => 'assets/icons/group.svg';
-
-  /// File path: assets/icons/notes.svg
-  String get notes => 'assets/icons/notes.svg';
-
-  /// File path: assets/icons/queue_item.svg
-  String get queueItem => 'assets/icons/queue_item.svg';
-
-  /// File path: assets/icons/sign.svg
-  String get sign => 'assets/icons/sign.svg';
-
-  /// File path: assets/icons/signup.svg
-  String get signup => 'assets/icons/signup.svg';
-
-  /// File path: assets/icons/supplier_n_order.svg
-  String get supplierNOrder => 'assets/icons/supplier_n_order.svg';
-
-  /// File path: assets/icons/three.svg
-  String get three => 'assets/icons/three.svg';
-
-  /// File path: assets/icons/users.svg
-  String get users => 'assets/icons/users.svg';
-
-  /// File path: assets/icons/work_order.svg
-  String get workOrder => 'assets/icons/work_order.svg';
+  /// File path: assets/icons/setting.svg
+  String get setting => 'assets/icons/setting.svg';
 
   /// List of all assets
-  List<String> get values => [
-        close,
-        notification,
-        add,
-        adminNote,
-        approvals,
-        attachMedia,
-        backArrow,
-        cashControl,
-        checkFile,
-        collection,
-        collectionNRoutes,
-        create,
-        dashboard,
-        database,
-        file,
-        group,
-        notes,
-        queueItem,
-        sign,
-        signup,
-        supplierNOrder,
-        three,
-        users,
-        workOrder
-      ];
+  List<String> get values =>
+      [academics, dashboard, notfication, reports, setting];
 }
 
 class $AssetsImagesGen {

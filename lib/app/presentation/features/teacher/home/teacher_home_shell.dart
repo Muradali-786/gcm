@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../../../gen/assets.gen.dart';
@@ -57,6 +58,7 @@ class _TeacherHomeShellPageState extends State<TeacherHomeShellPage> {
                     padding: const EdgeInsets.symmetric(vertical: 5.0),
                     child: SvgPicture.asset(
                       Assets.icons.dashboard,
+
                       color: widget.navigationShell.currentIndex == 0
                           ? AppColors.kWhite
                           : AppColors.kSecondary,
@@ -68,49 +70,52 @@ class _TeacherHomeShellPageState extends State<TeacherHomeShellPage> {
                   icon: Padding(
                     padding: const EdgeInsets.symmetric(vertical: 5.0),
                     child: SvgPicture.asset(
-                      Assets.icons.collection,
+                      Assets.icons.academics,
                       color: widget.navigationShell.currentIndex == 1
                           ? AppColors.kWhite
                           : AppColors.kSecondary,
                     ),
                   ),
-                  label: 'Collections',
+                  label: 'Academics',
                 ),
                 BottomNavigationBarItem(
                   icon: Padding(
                     padding: const EdgeInsets.symmetric(vertical: 5.0),
                     child: SvgPicture.asset(
-                      Assets.icons.approvals,
+                      Assets.icons.reports,
                       color: widget.navigationShell.currentIndex == 2
                           ? AppColors.kWhite
                           : AppColors.kSecondary,
                     ),
                   ),
-                  label: 'Approvals',
+                  label: 'Reports',
                 ),
                 BottomNavigationBarItem(
                   icon: Padding(
                     padding: const EdgeInsets.symmetric(vertical: 5.0),
                     child: SvgPicture.asset(
-                      Assets.icons.cashControl,
+                      Assets.icons.notfication,
+                      height: 20,
+                      fit: BoxFit.fitWidth,
                       color: widget.navigationShell.currentIndex == 3
                           ? AppColors.kWhite
                           : AppColors.kSecondary,
                     ),
                   ),
-                  label: 'Cash Control',
+                  label: 'Notifications',
                 ),
                 BottomNavigationBarItem(
                   icon: Padding(
                     padding: const EdgeInsets.symmetric(vertical: 5.0),
                     child: SvgPicture.asset(
-                      Assets.icons.database,
+                      Assets.icons.setting,
+
                       color: widget.navigationShell.currentIndex == 4
                           ? AppColors.kWhite
                           : AppColors.kSecondary,
                     ),
                   ),
-                  label: 'Database',
+                  label: 'Setting',
                 ),
               ],
             ),

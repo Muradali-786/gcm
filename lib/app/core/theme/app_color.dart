@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 abstract class AppColors {
   // Primary and Secondary Colors
   static const Color kPrimaryBlue = Color(0xFF023047);
-  static const Color kSecondary = Color(0xFF00BCD4);
+  static const Color kSecondary = Color(0xFF858585);
   static const Color kSecondaryLight = Color(0xFFB2EBF2);
 
   // Whites

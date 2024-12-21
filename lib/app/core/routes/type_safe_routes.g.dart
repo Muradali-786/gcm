@@ -67,6 +67,38 @@ RouteBase get $teacherHomeShellRoute => StatefulShellRouteData.$route(
             ),
           ],
         ),
+        StatefulShellBranchData.$branch(
+          routes: [
+            GoRouteData.$route(
+              path: '/academics',
+              factory: $AcademicsRouteExtension._fromState,
+            ),
+          ],
+        ),
+        StatefulShellBranchData.$branch(
+          routes: [
+            GoRouteData.$route(
+              path: '/reports',
+              factory: $ReportsRouteExtension._fromState,
+            ),
+          ],
+        ),
+        StatefulShellBranchData.$branch(
+          routes: [
+            GoRouteData.$route(
+              path: '/notifications',
+              factory: $NotificationRouteExtension._fromState,
+            ),
+          ],
+        ),
+        StatefulShellBranchData.$branch(
+          routes: [
+            GoRouteData.$route(
+              path: '/setting',
+              factory: $SettingRouteExtension._fromState,
+            ),
+          ],
+        ),
       ],
     );
 
@@ -81,6 +113,76 @@ extension $DashboardRouteExtension on DashboardRoute {
 
   String get location => GoRouteData.$location(
         '/dashboard',
+      );
+
+  void go(BuildContext context) => context.go(location);
+
+  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
+
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
+
+  void replace(BuildContext context) => context.replace(location);
+}
+
+extension $AcademicsRouteExtension on AcademicsRoute {
+  static AcademicsRoute _fromState(GoRouterState state) =>
+      const AcademicsRoute();
+
+  String get location => GoRouteData.$location(
+        '/academics',
+      );
+
+  void go(BuildContext context) => context.go(location);
+
+  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
+
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
+
+  void replace(BuildContext context) => context.replace(location);
+}
+
+extension $ReportsRouteExtension on ReportsRoute {
+  static ReportsRoute _fromState(GoRouterState state) => const ReportsRoute();
+
+  String get location => GoRouteData.$location(
+        '/reports',
+      );
+
+  void go(BuildContext context) => context.go(location);
+
+  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
+
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
+
+  void replace(BuildContext context) => context.replace(location);
+}
+
+extension $NotificationRouteExtension on NotificationRoute {
+  static NotificationRoute _fromState(GoRouterState state) =>
+      const NotificationRoute();
+
+  String get location => GoRouteData.$location(
+        '/notifications',
+      );
+
+  void go(BuildContext context) => context.go(location);
+
+  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
+
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
+
+  void replace(BuildContext context) => context.replace(location);
+}
+
+extension $SettingRouteExtension on SettingRoute {
+  static SettingRoute _fromState(GoRouterState state) => const SettingRoute();
+
+  String get location => GoRouteData.$location(
+        '/setting',
       );
 
   void go(BuildContext context) => context.go(location);
