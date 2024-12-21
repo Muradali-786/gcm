@@ -12,6 +12,7 @@ final TextStyle kSecondaryHeadingStyle = TextStyle(
   color: AppColors.kPrimaryBlue,
 );
 
+
 final TextStyle kSecondaryHeading2Style = TextStyle(
   fontSize: 16,
   fontFamily: AppTheme.secondaryFontFamily,
@@ -23,14 +24,14 @@ final TextStyle kTitleHeadingStyle = TextStyle(
   fontSize: 16,
   fontFamily: AppTheme.secondaryFontFamily,
   fontWeight: FontWeight.w600,
-  color: AppColors.kPrimaryBlack,
+  color: AppColors.kPrimaryBlue,
 );
 
 final TextStyle kSecondaryHeading3Style = TextStyle(
   fontSize: 12,
   fontFamily: AppTheme.secondaryFontFamily,
   fontWeight: FontWeight.w500,
-  color: AppColors.kPrimaryBlack,
+  color: AppColors.kGray85,
 );
 
 final TextStyle kSubTitleStyle = TextStyle(
@@ -53,6 +54,12 @@ final InputBorder kDefaultOutlineInputBorder = OutlineInputBorder(
     color: AppColors.kDivider,
   ),
 );
+final InputBorder kErrorInputBorder = OutlineInputBorder(
+  borderRadius: BorderRadius.circular(12),
+  borderSide: const BorderSide(
+    color: Colors.red,
+  ),
+);
 
 // Container Decoration
 final Decoration kAppContainerDecoration = BoxDecoration(
@@ -64,7 +71,7 @@ final Decoration kAppContainerDecoration = BoxDecoration(
 );
 
 // Padding Constant
-const double kBodyHorizontalPadding = 16.0;
+const double kBodyHP = 16.0;
 
 // Date Formatter Function
 String formatDate(String dateString) {

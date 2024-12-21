@@ -65,12 +65,18 @@ abstract class AppTheme {
           ),
         ),
         inputDecorationTheme: InputDecorationTheme(
-          labelStyle: const TextStyle(fontSize: 12),
-          errorStyle: const TextStyle(fontSize: 12),
-          // border: defaultOutlineInputBorder,
-          // focusedErrorBorder: defaultOutlineInputBorder,
-          // enabledBorder: defaultOutlineInputBorder,
-        ),
+            labelStyle: const TextStyle(
+              fontSize: 12,
+              color: AppColors.kPrimaryBlue,
+            ),
+            errorStyle: const TextStyle(
+              fontSize: 12,
+              color: AppColors.kPrimaryBlue,
+            ),
+            border: kDefaultOutlineInputBorder,
+            focusedErrorBorder: kDefaultOutlineInputBorder,
+            enabledBorder: kDefaultOutlineInputBorder,
+            errorBorder: kErrorInputBorder),
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
             backgroundColor: AppColors.kPrimaryBlue,

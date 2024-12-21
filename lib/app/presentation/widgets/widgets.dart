@@ -11,3 +11,4 @@ export 'status_widget.dart';
 export 'resource_widget.dart';
 export 'action_button.dart';
 export 'app_dropdown.dart';
+export 'notification_with_badge.dart';

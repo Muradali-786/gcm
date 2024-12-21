@@ -3,6 +3,10 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gap/gap.dart';
+import 'package:gcm/app/core/theme/app_styles.dart';
+import 'package:gcm/app/core/theme/app_theme.dart';
+import 'package:gcm/app/presentation/widgets/default_appbar.dart';
+import 'package:gcm/app/presentation/widgets/notification_with_badge.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../../../gen/assets.gen.dart';
@@ -20,7 +24,6 @@ class TeacherHomeShellPage extends StatefulWidget {
 class _TeacherHomeShellPageState extends State<TeacherHomeShellPage> {
   @override
   Widget build(BuildContext context) {
-    log('currentIndex: ${widget.navigationShell.currentIndex}');
     return Scaffold(
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.all(8.0),
@@ -51,7 +54,6 @@ class _TeacherHomeShellPageState extends State<TeacherHomeShellPage> {
                     padding: const EdgeInsets.symmetric(vertical: 5.0),
                     child: SvgPicture.asset(
                       Assets.icons.dashboard,
-
                       color: widget.navigationShell.currentIndex == 0
                           ? AppColors.kWhite
                           : AppColors.kSecondary,
@@ -102,13 +104,12 @@ class _TeacherHomeShellPageState extends State<TeacherHomeShellPage> {
                     padding: const EdgeInsets.symmetric(vertical: 5.0),
                     child: SvgPicture.asset(
                       Assets.icons.setting,
-
                       color: widget.navigationShell.currentIndex == 4
                           ? AppColors.kWhite
                           : AppColors.kSecondary,
                     ),
                   ),
-                  label: 'Setting',
+                  label: 'Settings',
                 ),
               ],
             ),
@@ -130,20 +131,4 @@ class _TeacherHomeShellPageState extends State<TeacherHomeShellPage> {
     );
   }
 
-  String getPageTitle(int index) {
-    switch (index) {
-      case 0:
-        return 'Dashboard';
-      case 1:
-        return 'Collection';
-      case 2:
-        return 'Approvals';
-      case 3:
-        return 'Cash Control';
-      case 4:
-        return 'Database';
-      default:
-        return 'Dashboard'; // ################ here should return Dashboard
-    }
-  }
 }

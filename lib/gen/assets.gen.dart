@@ -122,30 +122,25 @@ class $AssetsIconsGen {
   /// File path: assets/icons/notfication.svg
   String get notfication => 'assets/icons/notfication.svg';
 
+  /// File path: assets/icons/notify.svg
+  String get notify => 'assets/icons/notify.svg';
+
   /// File path: assets/icons/reports.svg
   String get reports => 'assets/icons/reports.svg';
 
   /// File path: assets/icons/setting.svg
   String get setting => 'assets/icons/setting.svg';
 
+  /// File path: assets/icons/subject.svg
+  String get subject => 'assets/icons/subject.svg';
+
   /// List of all assets
   List<String> get values =>
-      [academics, dashboard, notfication, reports, setting];
+      [academics, dashboard, notfication, notify, reports, setting, subject];
 }
 
 class $AssetsImagesGen {
   const $AssetsImagesGen();
-
-  /// File path: assets/images/Employee.svg
-  String get employeeSvg => 'assets/images/Employee.svg';
-
-  /// File path: assets/images/employee.png
-  AssetGenImage get employeePng =>
-      const AssetGenImage('assets/images/employee.png');
-
-  /// File path: assets/images/admin_pix.png
-  AssetGenImage get adminPix =>
-      const AssetGenImage('assets/images/admin_pix.png');
 
   /// File path: assets/images/bg.png
   AssetGenImage get bg => const AssetGenImage('assets/images/bg.png');
@@ -153,8 +148,11 @@ class $AssetsImagesGen {
   /// File path: assets/images/csr.png
   AssetGenImage get csr => const AssetGenImage('assets/images/csr.png');
 
+  /// File path: assets/images/emp.png
+  AssetGenImage get emp => const AssetGenImage('assets/images/emp.png');
+
   /// List of all assets
-  List<dynamic> get values => [employeeSvg, employeePng, adminPix, bg, csr];
+  List<AssetGenImage> get values => [bg, csr, emp];
 }
 
 class Assets {
