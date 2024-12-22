@@ -12,7 +12,6 @@ final TextStyle kSecondaryHeadingStyle = TextStyle(
   color: AppColors.kPrimaryBlue,
 );
 
-
 final TextStyle kSecondaryHeading2Style = TextStyle(
   fontSize: 16,
   fontFamily: AppTheme.secondaryFontFamily,
@@ -44,7 +43,7 @@ final TextStyle kSubTitleStyle = TextStyle(
 final TextStyle kSecondaryLabelStyle = TextStyle(
   fontSize: 12,
   fontFamily: AppTheme.secondaryFontFamily,
-  color: AppColors.kPrimaryBlack,
+  color: AppColors.kBlack,
 );
 
 // Input Border

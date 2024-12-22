@@ -69,6 +69,10 @@ abstract class AppTheme {
               fontSize: 12,
               color: AppColors.kPrimaryBlue,
             ),
+            hintStyle: const TextStyle(
+              fontSize: 14,
+              color: AppColors.kPrimaryBlue,
+            ),
             errorStyle: const TextStyle(
               fontSize: 12,
               color: AppColors.kPrimaryBlue,
@@ -81,10 +85,21 @@ abstract class AppTheme {
           style: ElevatedButton.styleFrom(
             backgroundColor: AppColors.kPrimaryBlue,
             foregroundColor: Colors.white,
+            iconColor: AppColors.kPrimaryBlue,
             elevation: 0,
-            padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+            padding: const EdgeInsets.symmetric(
+              horizontal: 24,
+              vertical: 16,
+            ),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(12),
+            ),
+          ),
+        ),
+        bottomSheetTheme: BottomSheetThemeData(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.vertical(
+              top: Radius.circular(20.0),
             ),
           ),
         ),

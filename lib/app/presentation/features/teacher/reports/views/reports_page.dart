@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../../core/theme/app_styles.dart';
 import '../../../../widgets/default_appbar.dart';
+import '../widgets/reports_body.dart';
 
 class ReportsPage extends StatelessWidget {
   const ReportsPage({super.key});
@@ -24,6 +25,7 @@ class ReportsView extends StatelessWidget {
           style: kSecondaryHeading2Style,
         ),
       ),
+      body: ReportsBody(),
     );
   }
 }

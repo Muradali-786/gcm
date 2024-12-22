@@ -28,6 +28,9 @@ class DefaultAppBar extends StatelessWidget implements PreferredSizeWidget {
         preferredSize: Size.fromHeight(1.0),
         child: Container(
           color: Colors.grey.shade300,
+          margin: EdgeInsets.symmetric(
+            horizontal: kBodyHP,
+          ),
           height: 1.0,
         ),
       ),
