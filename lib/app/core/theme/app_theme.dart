@@ -5,9 +5,7 @@ import 'app_color.dart';
 import 'app_styles.dart';
 
 abstract class AppTheme {
-  // static TextStyle primaryTextStyle = TextStyle(fontFamily: primaryFontFamily);
   static TextStyle primaryTextStyle = GoogleFonts.montserrat();
-
   static String primaryFontFamily = 'Montserrat';
   static String secondaryFontFamily = 'ClashDisplay';
 
@@ -18,10 +16,10 @@ abstract class AppTheme {
           primary: AppColors.kPrimaryBlue,
         ),
         fontFamily: primaryFontFamily,
-        textTheme: const TextTheme().apply(
+        textTheme: TextTheme().apply(
           fontFamily: primaryFontFamily,
         ),
-        primaryTextTheme: const TextTheme().apply(
+        primaryTextTheme: TextTheme().apply(
           fontFamily: primaryFontFamily,
         ),
         iconTheme: const IconThemeData(
@@ -65,22 +63,23 @@ abstract class AppTheme {
           ),
         ),
         inputDecorationTheme: InputDecorationTheme(
-            labelStyle: const TextStyle(
-              fontSize: 12,
-              color: AppColors.kPrimaryBlue,
-            ),
-            hintStyle: const TextStyle(
-              fontSize: 14,
-              color: AppColors.kPrimaryBlue,
-            ),
-            errorStyle: const TextStyle(
-              fontSize: 12,
-              color: AppColors.kPrimaryBlue,
-            ),
-            border: kDefaultOutlineInputBorder,
-            focusedErrorBorder: kDefaultOutlineInputBorder,
-            enabledBorder: kDefaultOutlineInputBorder,
-            errorBorder: kErrorInputBorder),
+          labelStyle: const TextStyle(
+            fontSize: 12,
+            color: AppColors.kPrimaryBlue,
+          ),
+          hintStyle: const TextStyle(
+            fontSize: 14,
+            color: AppColors.kPrimaryBlue,
+          ),
+          errorStyle: const TextStyle(
+            fontSize: 12,
+            color: AppColors.kPrimaryBlue,
+          ),
+          border: kDefaultOutlineInputBorder,
+          focusedErrorBorder: kDefaultOutlineInputBorder,
+          enabledBorder: kDefaultOutlineInputBorder,
+          errorBorder: kErrorInputBorder,
+        ),
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
             backgroundColor: AppColors.kPrimaryBlue,

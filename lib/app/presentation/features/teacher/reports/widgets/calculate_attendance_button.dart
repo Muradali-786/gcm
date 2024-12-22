@@ -11,7 +11,7 @@ class CalculateAttendanceButton extends StatelessWidget {
     return SizedBox(
       width: double.maxFinite,
       child: ElevatedButton.icon(
-        onPressed: () => calculateAttendanceModelSheet(context),
+        onPressed: () => _calculateAttendanceModelSheet(context),
         icon: Icon(Icons.info_rounded),
         iconAlignment: IconAlignment.end,
         style: ElevatedButton.styleFrom(
@@ -28,7 +28,7 @@ class CalculateAttendanceButton extends StatelessWidget {
     );
   }
 
-  static void calculateAttendanceModelSheet(BuildContext context) {
+  static void _calculateAttendanceModelSheet(BuildContext context) {
     showModalBottomSheet(
       context: context,
       showDragHandle: true,

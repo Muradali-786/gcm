@@ -12,13 +12,13 @@ class ReportsBody extends StatefulWidget {
 
 class _ReportsBodyState extends State<ReportsBody> {
   final _reportController = TextEditingController();
-  final _empController = TextEditingController();
+  final _stdController = TextEditingController();
   final _dateRangeController = TextEditingController();
 
   @override
   void dispose() {
     _reportController.dispose();
-    _empController.dispose();
+    _stdController.dispose();
     _dateRangeController.dispose();
     super.dispose();
   }
@@ -33,52 +33,9 @@ class _ReportsBodyState extends State<ReportsBody> {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                'Report Type',
-                style: kSecondaryHeading3Style,
-              ),
-              Gap(6),
-              TextFormField(
-                controller: _reportController,
-                ignorePointers: true,
-                decoration: const InputDecoration(
-                  hintText: 'Select Report',
-                  suffixIcon: Icon(
-                    Icons.keyboard_arrow_down,
-                  ),
-                ),
-              ),
-              Gap(16),
-              Text(
-                'Employee',
-                style: kSecondaryHeading3Style,
-              ),
-              Gap(6),
-              TextFormField(
-                controller: _empController,
-                ignorePointers: true,
-                decoration: const InputDecoration(
-                  hintText: 'Select Employee',
-                ),
-              ),
-              Gap(16),
-              Text(
-                'Period',
-                style: kSecondaryHeading3Style,
-              ),
-              Gap(6),
-              TextFormField(
-                controller: _reportController,
-                ignorePointers: true,
-                decoration: const InputDecoration(
-                  hintText: 'Select date range',
-                  suffixIcon: Icon(
-                    Icons.calendar_today_outlined,
-                    size: 20,
-                  ),
-                ),
-              ),
-              Gap(20),
+              ReportTypeWidget(reportType: _reportController),
+              SelectStudentWidget(stdController: _stdController),
+              PeriodWidget(dateController: _dateRangeController),
               SizedBox(
                 width: double.maxFinite,
                 child: ElevatedButton(
@@ -87,16 +44,20 @@ class _ReportsBodyState extends State<ReportsBody> {
                 ),
               ),
               Gap(30),
-              Text(
-                'Note:-Please ensure you have MS Excel/Google Sheets or equivalent app to view the reports.',
-                style: kSecondaryHeading3Style.copyWith(fontSize: 14),
-              ),
+              _noteText(),
               Gap(40),
-              CalculateAttendanceButton()
+              CalculateAttendanceButton(),
             ],
           ),
         ),
       ),
+    );
+  }
+
+  Text _noteText() {
+    return Text(
+      'Note:-Please ensure you have MS Excel/Google Sheets or equivalent app to view the reports.',
+      style: kSecondaryHeading3Style.copyWith(fontSize: 14),
     );
   }
 }
