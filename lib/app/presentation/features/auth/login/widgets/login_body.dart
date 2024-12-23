@@ -82,7 +82,8 @@ class _LoginBodyState extends State<LoginBody> {
                     width: double.maxFinite,
                     child: ElevatedButton(
                       onPressed: () {
-                        DashboardRoute().go(context);
+                        AdminDashboardRoute().go(context);
+
                       },
                       child: Text('Login'),
                     ),

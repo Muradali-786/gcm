@@ -10,6 +10,7 @@ List<RouteBase> get $appRoutes => [
       $splashRoute,
       $loginRoute,
       $teacherHomeShellRoute,
+      $adminHomeShellRoute,
     ];
 
 RouteBase get $splashRoute => GoRouteData.$route(
@@ -183,6 +184,69 @@ extension $SettingRouteExtension on SettingRoute {
 
   String get location => GoRouteData.$location(
         '/setting',
+      );
+
+  void go(BuildContext context) => context.go(location);
+
+  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
+
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
+
+  void replace(BuildContext context) => context.replace(location);
+}
+
+RouteBase get $adminHomeShellRoute => StatefulShellRouteData.$route(
+      factory: $AdminHomeShellRouteExtension._fromState,
+      branches: [
+        StatefulShellBranchData.$branch(
+          routes: [
+            GoRouteData.$route(
+              path: '/admin-dashboard',
+              factory: $AdminDashboardRouteExtension._fromState,
+            ),
+          ],
+        ),
+        StatefulShellBranchData.$branch(
+          routes: [
+            GoRouteData.$route(
+              path: '/teacher',
+              factory: $TeacherManagemenetRouteExtension._fromState,
+            ),
+          ],
+        ),
+      ],
+    );
+
+extension $AdminHomeShellRouteExtension on AdminHomeShellRoute {
+  static AdminHomeShellRoute _fromState(GoRouterState state) =>
+      const AdminHomeShellRoute();
+}
+
+extension $AdminDashboardRouteExtension on AdminDashboardRoute {
+  static AdminDashboardRoute _fromState(GoRouterState state) =>
+      const AdminDashboardRoute();
+
+  String get location => GoRouteData.$location(
+        '/admin-dashboard',
+      );
+
+  void go(BuildContext context) => context.go(location);
+
+  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
+
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
+
+  void replace(BuildContext context) => context.replace(location);
+}
+
+extension $TeacherManagemenetRouteExtension on TeacherManagemenetRoute {
+  static TeacherManagemenetRoute _fromState(GoRouterState state) =>
+      const TeacherManagemenetRoute();
+
+  String get location => GoRouteData.$location(
+        '/teacher',
       );
 
   void go(BuildContext context) => context.go(location);
