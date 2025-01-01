@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:gcm/app/presentation/features/admin/home/widgets/side_menu.dart';
 import 'package:go_router/go_router.dart';
-
+import 'package:provider/provider.dart';
 import '../../../../core/theme/app_color.dart';
+import '../../../../domain/providers/menu_controller.dart';
 
 class AdminHomeShellPage extends StatefulWidget {
   const AdminHomeShellPage({super.key, required this.navigationShell});
@@ -13,33 +15,39 @@ class AdminHomeShellPage extends StatefulWidget {
 }
 
 class _AdminHomeShellPageState extends State<AdminHomeShellPage> {
-  int _selectedIndex = 0; // Track the selected index for navigation
+  int _selectedIndex = 0;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: context.read<MenuAppController>().scaffoldKey,
+      drawer: buildDrawer(),
       body: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          // Left-side navigation bar
-          Expanded(
-            flex: 1,
-            child: Container(
-              color: AppColors.kPrimaryBlue,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const SizedBox(height: 20),
-                  _buildNavItem('Dashboard', 0),
-                  _buildNavItem('Teachers', 1),
-                ],
+          if (MediaQuery.sizeOf(context).width >= 1050) ...[
+            Expanded(
+              flex: 1,
+              child: Container(
+                color: AppColors.kPrimaryBlue,
+                child: Column(
+                  children: [
+                    SideMenu(
+                      selectedIndex: _selectedIndex,
+                      onMenuTap: (int index) {
+                        _selectedIndex = index;
+                        _goBranch(index);
+                      },
+                    ),
+                  ],
+                ),
               ),
             ),
-          ),
-          // Right-side content
+          ],
           Expanded(
-            flex: 4,
+            flex: 5,
             child: Container(
-              color: AppColors.kBlack,
               child: widget.navigationShell,
             ),
           ),
@@ -48,38 +56,19 @@ class _AdminHomeShellPageState extends State<AdminHomeShellPage> {
     );
   }
 
-  /// Builds a navigation item
-  Widget _buildNavItem(String title, int index) {
-    final isSelected = _selectedIndex == index;
-    return GestureDetector(
-      onTap: () {
-        _selectedIndex = index;
-        _goBranch(index);
-      },
-      child: Container(
-        padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 10),
-        color: isSelected ? AppColors.kSecondary : Colors.transparent,
-        child: Row(
-          children: [
-            Icon(
-              index == 0 ? Icons.dashboard : Icons.person, // Icon for each item
-              color: isSelected ? AppColors.kWhite : AppColors.kSecondary,
-            ),
-            const SizedBox(width: 10),
-            Text(
-              title,
-              style: TextStyle(
-                color: isSelected ? AppColors.kWhite : AppColors.kSecondary,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ],
-        ),
+  Drawer buildDrawer() {
+    return Drawer(
+      width: 240,
+      child: SideMenu(
+        selectedIndex: _selectedIndex,
+        onMenuTap: (int index) {
+          _selectedIndex = index;
+          _goBranch(index);
+        },
       ),
     );
   }
 
-  /// Navigates to the branch based on the index
   void _goBranch(int index) {
     widget.navigationShell.goBranch(
       index,

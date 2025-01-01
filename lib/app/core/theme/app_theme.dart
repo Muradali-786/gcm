@@ -46,6 +46,14 @@ abstract class AppTheme {
             return Icon(Icons.arrow_back_ios_new_outlined);
           },
         ),
+        drawerTheme: DrawerThemeData(
+          backgroundColor: AppColors.kPrimaryBlue,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.horizontal(
+              right: Radius.circular(12),
+            ),
+          ),
+        ),
         tabBarTheme: TabBarTheme(
           indicatorSize: TabBarIndicatorSize.tab,
           labelStyle: kSecondaryLabelStyle.copyWith(
